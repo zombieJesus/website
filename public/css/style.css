@@ -1,0 +1,287 @@
+/**/
+
+/* -FONTS- */
+@font-face {
+    font-family: 'Graphik', Helvetica, sans-serif;
+    src: url('assets/Graphik-Regular.otf');
+    src: url('assets/Graphik-semibold.otf');
+  }
+
+@font-face {
+    font-family: "Apercu Mono Regular", 'Andale Mono', monospace;
+    src: url('assets/apercu-mono-webfont.ttf');
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../assets/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../assets/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../assets/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* -SELECTION COLOUR- */
+
+::selection {
+  background: #21F6A1; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #21F6A1; /* Gecko Browsers */
+}
+
+
+*{padding:0; margin:0;}
+
+
+/* -HEADER + NAVBAR- */
+
+#header{height:700px;}
+#header > img{
+  height:auto;
+  width: 100%;
+  background-position: 50% 50%;
+  position:fixed;
+  z-index: -1;
+}
+
+/* -TITLE- */
+/*
+#cover{
+  font-family: courier;
+  font-size: 30px;
+}
+
+.green{
+  background-color: #21F6A1;
+}
+*/
+
+#content > #navbar{
+    position:absolute;
+    top:-100;
+    width:100%;
+    height:55px;
+    background-color:#000;
+}
+
+
+/*temp navbar scrolling experiment*/
+
+nav {
+  text-align: right;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 1em;
+  position: fixed;
+  width: 100%;
+}
+nav a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  padding: 2em 1em .5em;
+  -webkit-transition: all .3s ease-in;
+}
+
+
+#navbar > ul{
+  font-family: "Apercu Mono Regular", 'Andale Mono', monospace;
+  margin-top:18px;
+  margin-right: 30px;
+  display: inline-block;
+  float:right;
+}
+
+#navbar > ul > li{display:inline;}
+#navbar > ul > li > a{
+  color:#fff;
+  font-size:14px;
+  padding:19px;
+  text-decoration: none;
+}
+
+#navbar > ul > li:hover > a{
+  color:#000;
+  background-color: #21F6A1;
+}
+
+#logo{
+  text-decoration: none;
+  font-family: courier;
+  cursor:pointer;
+  margin-top:13px;
+  margin-left:30px;
+  color:#fff;
+  font-size:25px;
+  float:left;
+}
+#logo:hover{
+  color:#21F6A1;
+}
+
+/* -TEXT HEADINGS- */
+
+#content{
+  height:0vh;
+  z-index: 10;
+  position: relative;
+  background-color:#fff;
+}
+
+#main > *{
+  margin-top:30px;
+  margin-bottom: 30px;
+}
+
+#main{
+
+  background-color:#fff;
+  z-index:1;
+
+  font-family: 'Graphik', sans-serif;
+  height:auto; /*180vh;*/
+  position:relative;
+  text-align:center;
+  font-size:25px;
+
+  padding-top:100px;
+  padding-bottom: 100px;
+}
+
+h1{
+  padding-top: 200px;
+  text-decoration: underline;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: inherit;
+  position: absolute;
+  margin-bottom: 0px;
+  right:65%;
+}
+
+h2{
+  padding-top: 210px;
+  padding-bottom: 50px; /*space between h2 and p*/
+  font-size: 0.8em;
+  text-align: left;
+  position:relative;
+  left: 38.2%; /*golden ration offset*/
+}
+
+p{
+  font-family: "Apercu Mono Regular", 'Andale Mono', monospace;
+  font-size: 16px;
+  line-height: 1.8em;
+  /*display: inline-block;*/
+  text-align: left;
+  text-align: justify;
+  position:relative;
+
+  display: block;
+  width: 30%;
+  word-wrap: break-word;
+  word-break: normal;
+  left: 38.2%; /*golden ration offset*/
+
+
+}
+
+
+/* -LINKS/LABELS- */
+
+.label-black {
+  color: #000;
+
+  border: solid 1px #222;
+  font-size: 80%;
+  font-weight: normal;
+  border-radius: 3px;
+  padding: 3px 7px;
+
+  white-space: nowrap;
+}
+
+.link-black{
+  color: #000;
+  text-decoration: none;
+  border-bottom: 2px solid
+}
+.link-black:hover{
+  color:#FE7701;
+}
+
+
+/* Tooltip container */
+.tooltip {
+
+    position: relative;
+    border-bottom: 2px solid #21F6A1; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+
+    visibility: hidden;
+    width: 200px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 0px 0;
+    border-radius: 0px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*/// FOOTER ///*/
+
+footer.info {
+
+  font-family: 'Graphik', Helvetica, sans-serif;
+  font-size: 10px;
+
+  top:0;
+  position:relative;
+  width:100%;
+  color: #000;
+  background: #21F6A1;
+  padding: 10px;
+  text-align: center;
+  margin-top: 100px;
+  padding-top: 100px;
+}
+
+
+#toTop img {
+  width: 16px;
+}
+#toTop img:hover {
+  cursor: pointer;
+}
